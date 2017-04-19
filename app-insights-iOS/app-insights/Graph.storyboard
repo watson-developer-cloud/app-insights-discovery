@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Say-Eq-l4M">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Graph View Controller-->
+        <scene sceneID="xKB-dB-DvO">
+            <objects>
+                <viewController id="Say-Eq-l4M" customClass="GraphViewController" customModule="app_insights" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yZI-fo-fJ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="qjz-d3-rrY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oXg-Nf-YqI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aD-3E-eEj" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="611.5"/>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.15294117647058825" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdO-2b-3Hb">
+                                <rect key="frame" x="166" y="20" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7aD-3E-eEj" firstAttribute="top" secondItem="cdO-2b-3Hb" secondAttribute="bottom" constant="14.5" id="1VQ-RR-VuQ"/>
+                            <constraint firstItem="qjz-d3-rrY" firstAttribute="top" secondItem="7aD-3E-eEj" secondAttribute="bottom" id="5Ia-ar-A1L"/>
+                            <constraint firstItem="cdO-2b-3Hb" firstAttribute="centerX" secondItem="oXg-Nf-YqI" secondAttribute="centerX" id="9gw-8f-ceS"/>
+                            <constraint firstItem="cdO-2b-3Hb" firstAttribute="top" secondItem="yZI-fo-fJ3" secondAttribute="bottom" id="DC8-fx-bfl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7aD-3E-eEj" secondAttribute="leading" constant="16" id="JUu-cD-7GU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7aD-3E-eEj" secondAttribute="trailing" constant="-16" id="xc8-HP-uvr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="graphTitle" destination="cdO-2b-3Hb" id="clf-7V-Pfu"/>
+                        <outlet property="graphView" destination="7aD-3E-eEj" id="zri-0o-JmS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afx-l8-Aav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="105.69715142428787"/>
+        </scene>
+    </scenes>
+</document>

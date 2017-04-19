@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "702EB1136525F32EEBC1BEAF6F810A8366F0797D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "702EB1136525F32EEBC1BEAF6F810A8366F0797D" : 9223372036854775807,
+    "709C1E9D87E36564343935DBB27DC3F076453642" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F7672288-A13B-43D3-9EB6-B2C12316CD9E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "702EB1136525F32EEBC1BEAF6F810A8366F0797D" : "app-insights\/",
+    "709C1E9D87E36564343935DBB27DC3F076453642" : "app-insights\/app-insights-iOS\/swift-sdk\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "app-insights",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "app-insights-iOS\/app-insights.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.ibm.com:MIL\/app-insights.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "702EB1136525F32EEBC1BEAF6F810A8366F0797D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:watson-developer-cloud\/swift-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "709C1E9D87E36564343935DBB27DC3F076453642"
+    }
+  ]
+}

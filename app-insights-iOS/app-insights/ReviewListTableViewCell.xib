@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFNSDisplay.ttf">
+            <string>.HelveticaNeueDeskInterface-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="ReviewListTableViewCell" customModule="app_insights" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-QY-jHx" userLabel="App Review Title">
+                        <rect key="frame" x="18" y="15" width="339" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="339" id="PmE-8t-CBE"/>
+                            <constraint firstAttribute="height" constant="19.5" id="ZMW-WI-6KR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dur-Vp-yv0" userLabel="Star Stack View">
+                        <rect key="frame" x="18" y="41" width="57" height="8"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="ft4-Mp-pzt">
+                                <rect key="frame" x="0.0" y="0.0" width="9" height="8"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="SFg-Xe-aAl">
+                                <rect key="frame" x="12" y="0.0" width="9" height="8"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="vnx-Ja-0y4">
+                                <rect key="frame" x="24" y="0.0" width="9" height="8"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="OAP-t5-6Ad">
+                                <rect key="frame" x="36" y="0.0" width="9" height="8"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="dIY-fp-Ziq">
+                                <rect key="frame" x="48" y="0.0" width="9" height="8"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="Tac-OO-Rl3"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon ##, ####" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-23-srw" userLabel="Date">
+                        <rect key="frame" x="83" y="39" width="68.5" height="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rs5-cD-AJs">
+                        <rect key="frame" x="337" y="90.5" width="25" height="25"/>
+                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="11"/>
+                        <state key="normal" title="More"/>
+                        <connections>
+                            <action selector="readMoreButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="efi-Eb-0yE"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMe-vt-ci8" userLabel="Review">
+                        <rect key="frame" x="18" y="56" width="339" height="43"/>
+                        <string key="text">review text review text review text review text review text review text review text review text review text review text review text review text review text review text review text review text review </string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gb-F7-VVr" userLabel="Border View">
+                        <rect key="frame" x="18" y="120" width="359" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="8Gu-JW-xGU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3Gb-F7-VVr" firstAttribute="top" secondItem="dMe-vt-ci8" secondAttribute="bottom" constant="21" id="0NV-6X-9ix"/>
+                    <constraint firstItem="3Gb-F7-VVr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="2y3-g6-HdM"/>
+                    <constraint firstItem="dMe-vt-ci8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="3Ky-Ty-9Mr"/>
+                    <constraint firstItem="yX3-QY-jHx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="9BG-RI-BEB"/>
+                    <constraint firstItem="dur-Vp-yv0" firstAttribute="top" secondItem="yX3-QY-jHx" secondAttribute="bottom" constant="6" id="BnN-uY-qic"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rs5-cD-AJs" secondAttribute="bottom" constant="6" id="F8i-eq-O5D"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rs5-cD-AJs" secondAttribute="trailing" constant="5" id="N5A-UW-idN"/>
+                    <constraint firstItem="dMe-vt-ci8" firstAttribute="top" secondItem="g3D-23-srw" secondAttribute="bottom" constant="4" id="OuU-qk-Onb"/>
+                    <constraint firstItem="yX3-QY-jHx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="P8h-fz-vfr"/>
+                    <constraint firstItem="rs5-cD-AJs" firstAttribute="leading" secondItem="dMe-vt-ci8" secondAttribute="trailing" constant="-20" id="Pkw-7G-Zo7"/>
+                    <constraint firstItem="g3D-23-srw" firstAttribute="top" secondItem="yX3-QY-jHx" secondAttribute="bottom" constant="3.5" id="X2e-SH-Fzk"/>
+                    <constraint firstItem="dMe-vt-ci8" firstAttribute="top" secondItem="dur-Vp-yv0" secondAttribute="bottom" constant="7" id="a4P-kd-OnD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3Gb-F7-VVr" secondAttribute="trailing" constant="-10" id="ca3-wP-vlI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="yX3-QY-jHx" secondAttribute="trailing" constant="10" id="kka-OA-PFU"/>
+                    <constraint firstItem="dur-Vp-yv0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="lzG-4Y-6pP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dMe-vt-ci8" secondAttribute="trailing" constant="10" id="mrv-Dh-Hcb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3Gb-F7-VVr" secondAttribute="bottom" id="wfF-7s-O8E"/>
+                    <constraint firstItem="g3D-23-srw" firstAttribute="leading" secondItem="dur-Vp-yv0" secondAttribute="trailing" constant="8" id="ydS-rN-7mD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateText" destination="g3D-23-srw" id="EGk-AM-cgC"/>
+                <outlet property="readMoreButton" destination="rs5-cD-AJs" id="hkc-db-McU"/>
+                <outlet property="reviewText" destination="dMe-vt-ci8" id="JBZ-3U-AIn"/>
+                <outlet property="reviewTitleText" destination="yX3-QY-jHx" id="R8Q-EU-afN"/>
+                <outlet property="starImage1" destination="ft4-Mp-pzt" id="ZIK-Xf-Ahj"/>
+                <outlet property="starImage2" destination="SFg-Xe-aAl" id="CvF-t4-lEz"/>
+                <outlet property="starImage3" destination="vnx-Ja-0y4" id="gLX-sU-SM7"/>
+                <outlet property="starImage4" destination="OAP-t5-6Ad" id="La5-Xq-wOO"/>
+                <outlet property="starImage5" destination="dIY-fp-Ziq" id="lwg-wR-5qE"/>
+                <outlet property="starStackView" destination="dur-Vp-yv0" id="yfd-Ye-9a8"/>
+            </connections>
+            <point key="canvasLocation" x="103.5" y="126"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Star" width="9" height="8"/>
+    </resources>
+</document>
