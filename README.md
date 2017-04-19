@@ -1,4 +1,4 @@
-# app-insights
+# app-insights-discovery
 
 Requirements:
 
@@ -6,6 +6,8 @@ Requirements:
 - Cloudant account
 - Discovery Service Instance
 - Xcode 8.x, Swift 3.x
+
+![Preview](images/App_Insights_Preview.gif)
 
 ##Overview
 All back-end set up will be run through the `ingest_reviews.py` and `extract_upload_app_details.py` scripts:
