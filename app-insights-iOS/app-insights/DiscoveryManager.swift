@@ -21,9 +21,9 @@ import SwiftyJSON
 class DiscoveryManager {
     
     // Constants
-    fileprivate let kEnvironmentName  = "byod"
-    fileprivate let kDiscoveryVersion = "2017-02-14"
-    fileprivate let kCollectionName   = "compiled_reviews_v4"
+    fileprivate let kEnvironmentName  = Credentials.EnvironmentName
+    fileprivate let kDiscoveryVersion = Credentials.DiscoveryVersion
+    fileprivate let kCollectionName   = Credentials.CollectionName
     
     fileprivate var discovery: Discovery!
     fileprivate var environmentID: String = ""
@@ -103,8 +103,11 @@ extension DiscoveryManager {
                 if let responseData = try? JSONSerialization.data(withJSONObject: response.json, options: []) {
                     var apps = [String]()
                     let json = JSON(data: responseData)
-                    let appNameResults = json["aggregations"][0]["results"]
-                    for (_, appName) in appNameResults {
+                    guard let (_, appNameResultsUnwrapped) = json["aggregations"].first else {
+                        failure(DiscoveryErrors.unexpectedJSON)
+                        return
+                    }
+                    for (_, appName) in appNameResultsUnwrapped["results"] {
                         let app = appName["key"].stringValue
                         apps.append(app)
                     }
@@ -135,12 +138,30 @@ extension DiscoveryManager {
                 if let responseData = try? JSONSerialization.data(withJSONObject: response.json, options: []) {
                     var graphSentiments = [GraphSentiment]()
                     let json = JSON(data: responseData)
-                    let timeSlice = json["aggregations"][0]["aggregations"][0]["results"]
+                    
+                    // Unwrap first aggregation response returned by Discovery service. Unwrapping over response index and corresponding value.
+                    guard let (_, firstAggregation) = json["aggregations"].first else {
+                        failure(DiscoveryErrors.unexpectedJSON)
+                        return
+                    }
+                    // Safely unwrap second part of aggregation json response returned by Discovery service.
+                    guard let (_, secondAggregation) = firstAggregation["aggregations"].first else {
+                        failure(DiscoveryErrors.unexpectedJSON)
+                        return
+                    }
+
+                    let timeSlice = secondAggregation["results"]
                     for (_, timeSliceInterval) in timeSlice {
                         let time = timeSliceInterval["key_as_string"].stringValue
                         var positiveSentiment = Sentiment(type: "positive", matchingResults: 0)
                         var negativeSentiment = Sentiment(type: "negative", matchingResults: 0)
-                        for (_, sentiment) in timeSliceInterval["aggregations"][0]["results"] {
+                        
+                        // Iterating over array's index and its corresponding value
+                        guard let (_, timeSliceIntervalResults) = timeSliceInterval["aggregations"].first else {
+                            failure(DiscoveryErrors.unexpectedJSON)
+                            return
+                        }
+                        for (_, sentiment) in timeSliceIntervalResults["results"] {
                             guard let matchingResults = Int(sentiment["matching_results"].stringValue) else {
                                 failure(DiscoveryErrors.stringToIntFailed)
                                 break
@@ -156,6 +177,7 @@ extension DiscoveryManager {
                         graphSentiments.append(graphSentiment)
                         success(graphSentiments)
                     }
+
                 }
         })
     }
@@ -197,7 +219,6 @@ extension DiscoveryManager {
                                         date: date)
                     reviews.append(review)
                 }
-//                print ("review results = \(reviews)")
                 success(reviews)
             }
         }
@@ -226,14 +247,30 @@ extension DiscoveryManager {
             if let responseData = try? JSONSerialization.data(withJSONObject: response.json, options: []) {
                 var keywords = [Keyword]()
                 let json = JSON(data: responseData)
-                let keywordResults = json["aggregations"][0]["aggregations"][0]["results"]
+                // Unwrap first aggregation response returned by Discovery service. Unwrapping over response index and corresponding value.
+                guard let (_, firstAggregation) = json["aggregations"].first else {
+                    failure(DiscoveryErrors.unexpectedJSON)
+                    return
+                }
+                // Safely unwrap second part of aggregation json response returned by Discovery service.
+                guard let (_, secondAggregation) = firstAggregation["aggregations"].first else {
+                    failure(DiscoveryErrors.unexpectedJSON)
+                    return
+                }
+                
+                let keywordResults = secondAggregation["results"]
                 print ("keywordAndSentiment Results = \(keywordResults)")
                 for (_, keywordResult) in keywordResults {
                     let keyword = keywordResult["key"].stringValue
                     var positiveSentiment = Sentiment(type: "positive", matchingResults: 0)
                     var neutralSentiment = Sentiment(type: "neutral", matchingResults: 0)
                     var negativeSentiment = Sentiment(type: "negative", matchingResults: 0)
-                    for (_, sentiment) in keywordResult["aggregations"][0]["results"] {
+                    guard let (_, keywordResultUnwrapped) = keywordResult["aggregations"].first else {
+                        failure(DiscoveryErrors.unexpectedJSON)
+                        return
+                    }
+                    // Iterate over the index of Discovery response's array and corresponding value.
+                    for (_, sentiment) in keywordResultUnwrapped["results"] {
                         guard let matchingResults = Int(sentiment["matching_results"].stringValue) else {
                             failure(DiscoveryErrors.stringToIntFailed)
                             break
@@ -250,7 +287,6 @@ extension DiscoveryManager {
                     }
                     let decodedKeyword = Keyword(keyword: keyword, positiveSentiment: positiveSentiment, neutralSentiment: neutralSentiment, negativeSentiment: negativeSentiment)
                     keywords.append(decodedKeyword)
-//                    print ("keyword result = \(keywords)")
                     success(keywords)
                 }
             }

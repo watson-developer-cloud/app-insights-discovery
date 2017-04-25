@@ -19,7 +19,11 @@ import Foundation
 public struct Credentials {
     static let DiscoveryUsername = "your-discovery-username-here"
     static let DiscoveryPassword = "your-discovery-password-here"
+    static let EnvironmentName = "your-discovery-environment-name"
+    static let CollectionName = "your-collection-name"
+    static let DiscoveryVersion = "2017-02-14"
     
     static let CloudantUsername = "your-cloudant-username-here"
     static let CloudantPassword = "your-cloudant-password-here"
+    static let AppsDBName = "your-cloudant-database-name"
 }

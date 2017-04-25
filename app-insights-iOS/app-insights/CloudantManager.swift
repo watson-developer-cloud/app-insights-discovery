@@ -21,7 +21,7 @@ import SwiftyJSON
 class CloudantManager {
     
     // Constants
-    fileprivate let kAppsDBName = "app_db"
+    fileprivate let kAppsDBName = Credentials.AppsDBName
     
     fileprivate var cloudant:Cloudant!
     // Singleton
