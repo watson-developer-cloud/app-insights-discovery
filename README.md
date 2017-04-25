@@ -7,7 +7,7 @@ Requirements:
 - Discovery Service Instance
 - Xcode 8.x, Swift 3.x
 
-![Preview](images/App_Insights_Preview.gif)
+![Preview](images/app-insights-giphy.gif)
 
 ##Overview
 All back-end set up will be run through the `ingest_reviews.py` and `extract_upload_app_details.py` scripts:
@@ -25,7 +25,7 @@ pip install -U python-dotenv
 pip install beautifulsoup4
 ```
 
-Insert your Discovery and Cloudant credentials into the `Scripts/.env` file. 
+Insert your Discovery and Cloudant credentials into the `Scripts/.env` file. Name your Discovery collection and Cloudant database anything you prefer. If the Discovery collection or Cloudant database instance doesn't exist, the Python script will create them for you (assuming the credentials for each service was filled in correctly).
 
 Run the following:
 
@@ -44,7 +44,9 @@ Within the `app-insights-iOS` directory, run the following:
 
 This command pulls all dependencies from Carthage. We currently use the Graphs, Watson Developer Cloud's Swift SDK and SwiftyJSON libraries. 
 
-Insert your Discovery and Cloudant username and passwords into the `app-insights-iOS/app-insights/Configuration.swift`.
+Insert your Discovery and Cloudant username and passwords into the `app-insights-iOS/app-insights/Configuration.swift`. Insert the same Discovery collection name and Cloudant database name you created when running the Python scripts into the Configuration file.   
+
+
 
 ### Running the project
 Press build and run to see the app running in Xcode's iPhone simulator. 
