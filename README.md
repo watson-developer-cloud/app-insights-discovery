@@ -21,8 +21,11 @@ Install the following Python libraries:
 
 ```bash
 pip install --upgrade watson-developer-cloud
+pip install cloudant
 pip install -U python-dotenv
 pip install beautifulsoup4
+pip install lxml
+pip install cssselect
 ```
 
 Insert your Discovery and Cloudant credentials into the `Scripts/.env` file. Name your Discovery collection and Cloudant database anything you prefer. If the Discovery collection or Cloudant database instance doesn't exist, the Python script will create them for you (assuming the credentials for each service was filled in correctly).
