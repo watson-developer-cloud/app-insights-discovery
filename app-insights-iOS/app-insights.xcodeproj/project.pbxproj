@@ -41,7 +41,6 @@
 		B3A639401E7B491000860C57 /* AppListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A6393E1E7B491000860C57 /* AppListTableViewCell.xib */; };
 		B3A639431E7B4D8E00860C57 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A639421E7B4D8E00860C57 /* UIViewExtension.swift */; };
 		B3A639461E7BA1A100860C57 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A639451E7BA1A100860C57 /* UIViewControllerExtension.swift */; };
-		CE035C671EA7ABD80008E083 /* CredentialsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE035C661EA7ABD80008E083 /* CredentialsExample.swift */; };
 		CE1446E31E808EAA00296879 /* ReviewListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1446E11E808EAA00296879 /* ReviewListTableViewCell.swift */; };
 		CE1446E41E808EAA00296879 /* ReviewListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1446E21E808EAA00296879 /* ReviewListTableViewCell.xib */; };
 		CE1446E71E84249700296879 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1446E61E84249700296879 /* UIColorExtension.swift */; };
@@ -116,7 +115,6 @@
 		B3A6393E1E7B491000860C57 /* AppListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppListTableViewCell.xib; sourceTree = "<group>"; };
 		B3A639421E7B4D8E00860C57 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B3A639451E7BA1A100860C57 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		CE035C661EA7ABD80008E083 /* CredentialsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsExample.swift; sourceTree = "<group>"; };
 		CE1446E11E808EAA00296879 /* ReviewListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewListTableViewCell.swift; sourceTree = "<group>"; };
 		CE1446E21E808EAA00296879 /* ReviewListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewListTableViewCell.xib; sourceTree = "<group>"; };
 		CE1446E61E84249700296879 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				B37988031E71FBB60041F7F6 /* Credentials.swift */,
-				CE035C661EA7ABD80008E083 /* CredentialsExample.swift */,
 				120232BD1E6E02ED00064095 /* Info.plist */,
 				120232CB1E6E178A00064095 /* Config.plist */,
 				CE1446EC1E842FA400296879 /* SFNSDisplay-Bold.ttf */,
@@ -463,7 +460,6 @@
 				B379882B1E78BA950041F7F6 /* KeywordsTableViewController.swift in Sources */,
 				CEFF2DB81E9FFE5B00959FD2 /* ReviewContainerWrapper.swift in Sources */,
 				CE1446E31E808EAA00296879 /* ReviewListTableViewCell.swift in Sources */,
-				CE035C671EA7ABD80008E083 /* CredentialsExample.swift in Sources */,
 				B3A639431E7B4D8E00860C57 /* UIViewExtension.swift in Sources */,
 				CE1446E91E842E7C00296879 /* UIFontExtension.swift in Sources */,
 				CEBB6DAD1E7745B2009C193C /* Keyword.swift in Sources */,
@@ -601,7 +597,7 @@
 				);
 				INFOPLIST_FILE = "app-insights/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.watson.app-insights";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.cio.be.watson.app-insights";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -618,7 +614,7 @@
 				);
 				INFOPLIST_FILE = "app-insights/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.watson.app-insights";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.cio.be.watson.app-insights";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
