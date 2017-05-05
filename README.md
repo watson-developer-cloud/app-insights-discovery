@@ -57,7 +57,7 @@ Python is used to extract, parse and upload reviews grabbed from the App Store's
 
   This command pulls all dependencies from Carthage. We currently use the Graphs, Watson Developer Cloud's Swift SDK and SwiftyJSON libraries.
 
-2. Insert your Discovery and Cloudant username and passwords into the `app-insights-iOS/app-insights/Configuration.swift`. Insert the same Discovery collection name and Cloudant database name you created when running the Python scripts into the Configuration file.   
+2. Insert your Discovery and Cloudant username and passwords into the `app-insights-iOS/app-insights/Credentials.swift`. Insert the same Discovery collection name and Cloudant database name you created when running the Python scripts into the Configuration file.   
 
 ### Running the project
 Press build and run to see the app running in Xcode's iPhone simulator.
