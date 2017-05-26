@@ -14,9 +14,9 @@ App Insights is a mobile app that runs on top of IBM Bluemix. The app uses Watso
 ### Prerequisites
 - [Bluemix account](https://console.ng.bluemix.net/registration/?target=/catalog/services/discovery/)
 - [Cloudant account](https://console.ng.bluemix.net/catalog/services/cloudant-nosql-db/) can be added onto your app through Bluemix.
-- Discovery Service Instance added to your app from Bluemix as well.
-- Building App Insights requires Xcode 8.x.
-- Downloading app dependencies requires Carthage 0.18.1
+- [Discovery Service Instance](https://developer.ibm.com/sso/bmregistration?target=/catalog/services/discovery/) added to your app from Bluemix as well.
+- Building App Insights requires [Xcode 8.x](https://developer.apple.com/xcode/).
+- Downloading app dependencies requires [Carthage 0.18.1](https://github.com/Carthage/Carthage?cm_mc_uid=58717655203614676882989&cm_mc_sid_50200000=1495829160).
 
 ### Setup Backend Configuration
 Python is used to extract, parse and upload reviews grabbed from the App Store's RSS feeds. It then cleans the data and uploads app details into Cloudant, and app reviews into the Discovery service.
