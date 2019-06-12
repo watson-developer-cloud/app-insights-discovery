@@ -1,8 +1,14 @@
+from __future__ import print_function
 from bs4 import BeautifulSoup
 import string, os, json, time, requests
 import settings as Settings
 from cloudant import cloudant
 from cloudant.document import Document
+
+try:
+    unicode
+except NameError:  # Python 3
+    unicode = str
 
 # Grab environment and collection IDs from ingest_reviews file
 environment_id = Settings.ENVIRONMENT_ID
@@ -136,7 +142,7 @@ def upload_to_db(app_id, name, category, description, image, rating, total_revie
             doc['sentiment'] = float(query_average_app_sentiment(raw_name))
 
         # Display document for error checking
-        print app_db[app_id]
+        print(app_db[app_id])
     return
 
 # Rename to extract and upload app details.
@@ -239,4 +245,4 @@ else:
     with open(filename) as apps:
         test_app = json.loads(apps.read())
     # delete_database()
-    print extract_app_details(test_app)
+    print(extract_app_details(test_app))

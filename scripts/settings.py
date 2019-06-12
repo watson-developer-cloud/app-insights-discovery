@@ -1,3 +1,4 @@
+from __future__ import print_function
 # settings.py
 import os
 from os.path import join, dirname
@@ -34,20 +35,20 @@ def get_envmt_id():
 ENVIRONMENT_ID = get_envmt_id()
 
 def get_configuration_id():
-    print "getting config id"
+    print("getting config id")
     configs = discovery.list_configurations(ENVIRONMENT_ID)
     review_config = [x for x in configs['configurations'] if
                      x['name'] == 'json_config']
     return review_config[0]['configuration_id']
 
 def get_collection_id(name):
-    print "getting collection id"
+    print("getting collection id")
     config_id = get_configuration_id()
     collections = discovery.list_collections(ENVIRONMENT_ID)
     collection = [c for c in collections["collections"] if
                   c['name'] == name]
     if len(collection) == 0:
-        print "creating collection"
+        print("creating collection")
         discovery.create_collection(ENVIRONMENT_ID, name, configuration_id=config_id)
         return get_collection_id(name)
     return collection[0]['collection_id']
