@@ -1,3 +1,4 @@
+from __future__ import print_function
 #include -utf-8-
 import settings as Settings
 import grab_top_apps as Grab
@@ -43,12 +44,12 @@ def upload_review(review, collection_id):
         Settings.discovery.add_document(envmt_id, collection_id, reviewTemp)
     except:
         time.sleep(5)
-        print "adding document caused error"
+        print("adding document caused error")
     reviewTemp.close()
     return
 
 def ingest_review():
-    print "Grabbing top apps..."
+    print("Grabbing top apps...")
     top_apps_dict = Grab.grab_top_apps()
     top_apps = top_apps_dict["result"]
 
@@ -64,7 +65,7 @@ def ingest_review():
         app_name = app["title"]
         app_id = int(float(app.get('id')))
 
-        print "Extracting reviews for app %s" %app["title"]
+        print("Extracting reviews for app %s" %app["title"])
         start = time.time()
         reviews = Extract.extract_reviews(app_name, app_id)
         end = time.time()
@@ -72,19 +73,19 @@ def ingest_review():
 
         # Ingest reviews only if reviews exist.
         if total_num_reviews != 0:
-            print "extraction complete, extraction of %d number of reviews took: %d seconds" %(total_num_reviews, end-start)
+            print("extraction complete, extraction of %d number of reviews took: %d seconds" %(total_num_reviews, end-start))
             start_collection_creation = time.time()
             num_review = 0
             for review in reviews[app_name]:
                 # Create a document
-                print "Uploading review %d out of %d." %(num_review, total_num_reviews)
+                print("Uploading review %d out of %d." %(num_review, total_num_reviews))
                 upload_review(review, collection_id)
                 num_review += 1
             end_collection_creation = time.time()
             total_collection_time = end_collection_creation - start_collection_creation
             converted_time = datetime.timedelta(seconds=(total_collection_time))
-            print "Collection of %d documents for %s took: %d seconds, which is %s in hh:mm:ss form, to create." %(total_num_reviews, app_name, total_collection_time, str(converted_time))
-            print "######################### Uploaded app %d: %s ############################." %(count, app_name)
+            print("Collection of %d documents for %s took: %d seconds, which is %s in hh:mm:ss form, to create." %(total_num_reviews, app_name, total_collection_time, str(converted_time)))
+            print("######################### Uploaded app %d: %s ############################." %(count, app_name))
             count += 1
             apps_grabbed.append(app)
 
@@ -93,12 +94,12 @@ def ingest_review():
                 f.write(json.dumps(apps_grabbed, ensure_ascii=False))
 
         else:
-            print "No reviews found. Skipping app: %s" %app_name
+            print("No reviews found. Skipping app: %s" %app_name)
 
     total_end = time.time()
     total_time = total_end - total_start
-    print "This script ran for %s. Wowza." % str(datetime.timedelta(seconds=total_time))
-    print "created collection: %s with collection id = %s" %(collection_name, collection_id)
+    print("This script ran for %s. Wowza." % str(datetime.timedelta(seconds=total_time)))
+    print("created collection: %s with collection id = %s" %(collection_name, collection_id))
 
 # Call on function to begin ingesting reviews.
 ingest_review()
