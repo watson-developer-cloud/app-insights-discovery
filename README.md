@@ -1,4 +1,7 @@
 # App Insights
+
+## DEPRECATED: this repo is no longer actively maintained. It can still be used as reference, but may contain outdated or unpatched code.
+
 App Insights is a mobile app that runs on top of IBM Bluemix. The app uses Watson Discovery service to provide analysis of reviews extracted from the top ten free apps in the App Store.
 
 ![Preview](images/app-insights.gif)
